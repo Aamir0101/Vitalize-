@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitalize</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/css/patient.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <h1><a href="/" class="home-logo">Vitalize</a></h1>
+                    <style>
+                        .home-logo{
+                            text-decoration: none;
+                            color: var(--primary);
+                        }
+                    </style>
+                </div>
+                <div class="user-info">
+                    <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="User">
+                    <div>
+                        <h3>Naveen Kant</h3>
+                        <p>Patient ID: CARD-789456</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="dashboard">
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i> Heart Health</a></li>
+                    <li><a href="#"><i class="fas fa-clipboard-list"></i> Reports</a></li>
+                    <li><a href="#"><i class="fas fa-prescription-bottle-alt"></i> Medications</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                    <li><a href="#"><i class="fas fa-file-medical"></i> Health Records</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </aside>
+            
+            <div class="main-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Vital Signs</h2>
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="vital-stats">
+                        <div class="stat">
+                            <i class="fas fa-heart"></i>
+                            <div class="stat-value">72</div>
+                            <div class="stat-label">BPM</div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-tint"></i>
+                            <div class="stat-value">120/80</div>
+                            <div class="stat-label">mmHg</div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-thermometer-half"></i>
+                            <div class="stat-value">98.6</div>
+                            <div class="stat-label">°F</div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-lungs"></i>
+                            <div class="stat-value">16</div>
+                            <div class="stat-label">Breaths/min</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Heart Rate History</h2>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="heartRateChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Cardiac Risk Assessment</h2>
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="risk-meter">
+                        <div class="risk-label">Low to Moderate Risk</div>
+                        <div class="meter">
+                            <div class="meter-fill"></div>
+                        </div>
+                        <p>Based on your latest metrics and lifestyle factors</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Current Medications</h2>
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <ul class="medication-list">
+                        <li>
+                            <span class="med-name">Atorvastatin</span>
+                            <span class="med-dosage">20mg daily</span>
+                        </li>
+                        <li>
+                            <span class="med-name">Aspirin</span>
+                            <span class="med-dosage">81mg daily</span>
+                        </li>
+                        <li>
+                            <span class="med-name">Metoprolol</span>
+                            <span class="med-dosage">50mg twice daily</span>
+                        </li>
+                        <li>
+                            <span class="med-name">Lisinopril</span>
+                            <span class="med-dosage">10mg daily</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card full-width">
+                    <div class="card-header">
+                        <h2>Upcoming Appointments</h2>
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="appointment">
+                        <div class="appointment-date">
+                            <div class="appointment-day">15</div>
+                            <div class="appointment-month">OCT</div>
+                        </div>
+                        <div class="appointment-details">
+                            <h3>Follow-up Consultation</h3>
+                            <p>10:30 AM with Dr. Shukla</p>
+                        </div>
+                    </div>
+                    <div class="appointment">
+                        <div class="appointment-date">
+                            <div class="appointment-day">28</div>
+                            <div class="appointment-month">OCT</div>
+                        </div>
+                        <div class="appointment-details">
+                            <h3>Stress Test</h3>
+                            <p>2:15 PM at Cardiology Center</p>
+                        </div>
+                    </div>
+                    <div class="appointment">
+                        <div class="appointment-date">
+                            <div class="appointment-day">05</div>
+                            <div class="appointment-month">NOV</div>
+                        </div>
+                        <div class="appointment-details">
+                            <h3>Echocardiogram</h3>
+                            <p>9:00 AM at Imaging Department</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card full-width">
+                    <div class="card-header">
+                        <h2>Heart Health Tips</h2>
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="health-tips">
+                        <div class="tip">
+                            <h3>Healthy Diet</h3>
+                            <p>Focus on fruits, vegetables, whole grains, and lean proteins. Limit saturated fats, salt, and added sugars.</p>
+                        </div>
+                        <div class="tip">
+                            <h3>Regular Exercise</h3>
+                            <p>Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week.</p>
+                        </div>
+                        <div class="tip">
+                            <h3>Stress Management</h3>
+                            <p>Practice relaxation techniques like deep breathing, meditation, or yoga to reduce stress.</p>
+                        </div>
+                        <div class="tip">
+                            <h3>Regular Check-ups</h3>
+                            <p>Monitor your blood pressure, cholesterol levels, and other heart health indicators regularly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="btn btn-primary"><i class="fas fa-file-medical-alt"></i> Generate Health Report</button>
+            <button class="btn btn-secondary"><i class="fas fa-video"></i> Schedule Telemedicine</button>
+            <button class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Contact Cardiologist</button>
+        </div>
+    </div>
+
+    <script>
+        // Heart Rate Chart
+        const heartRateCtx = document.getElementById('heartRateChart').getContext('2d');
+        const heartRateChart = new Chart(heartRateCtx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Heart Rate (BPM)',
+                    data: [68, 72, 70, 75, 71, 69, 72],
+                    borderColor: '#4ca1af',
+                    backgroundColor: 'rgba(76, 161, 175, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 60,
+                        max: 90
+                    }
+                }
+            }
+        });
+        
+        // Simulate real-time data updates
+        setInterval(() => {
+            // Generate random heart rate between 65-85
+            const newData = Array(7).fill().map(() => Math.floor(Math.random() * 20) + 65);
+            
+            heartRateChart.data.datasets[0].data = newData;
+            heartRateChart.update();
+            
+            // Update the heart rate value display
+            document.querySelector('.stat-value').textContent = newData[newData.length - 1];
+        }, 5000);
+    </script>
+</body>
+</html>
